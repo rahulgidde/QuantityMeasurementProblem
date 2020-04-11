@@ -17,7 +17,7 @@ public class QuantityMeasurement {
     }
 
     //METHOD FOR CONVERSION
-    public double getConversion(double value) {
+    public double getConversion(Double value) {
         QuantityAdapter adapter = QuantityFactory.getConversionType(type);
         double result = adapter.compare(value);
         return result;
