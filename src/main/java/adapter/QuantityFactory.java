@@ -11,9 +11,11 @@ public class QuantityFactory {
         if (type.equals(QuantityMeasurement.Conversion.FEET_TO_YARD))
             return new FeetToYardConversion();
         if (type.equals(QuantityMeasurement.Conversion.INCH_TO_YARD))
-            return new FeetToYardConversion();
+            return new InchToYardConversion();
         if (type.equals(QuantityMeasurement.Conversion.YARD_TO_INCH))
-            return new FeetToYardConversion();
+            return new YardToInchConversion();
+        if (type.equals(QuantityMeasurement.Conversion.YARD_TO_FEET))
+            return new YardToFeetConverstion();
         return null;
     }
 }
