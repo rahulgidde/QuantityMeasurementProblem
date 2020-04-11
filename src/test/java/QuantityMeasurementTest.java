@@ -46,4 +46,13 @@ public class QuantityMeasurementTest {
         double secondConversion = measurement1.getConversion(0.1);
         Assert.assertNotEquals(firstConversion, secondConversion, 0.0);
     }
+
+    @Test
+    public void givenZeroInchAndZeroInch_WhenEqual_ShouldReturnTrue() {
+        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
+        double firstConversion = measurement.getConversion(0.0);
+        QuantityMeasurement measurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
+        double secondConversion = measurement1.getConversion(0.0);
+        Assert.assertEquals(firstConversion, secondConversion, 0.0);
+    }
 }
