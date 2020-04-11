@@ -1,10 +1,10 @@
 package adapter;
 
 public class InchConversion extends QuantityAdapter {
-    double inch = 12;
+    double value = 12.0;
 
     @Override
-    public double compare(double value) {
-        return inch * value;
+    public double compare(double feet) {
+        return value * feet;
     }
 }
