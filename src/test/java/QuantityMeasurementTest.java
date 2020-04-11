@@ -3,6 +3,7 @@ import org.junit.Test;
 import service.QuantityMeasurement;
 
 public class QuantityMeasurementTest {
+    boolean result;
 
     @Test
     public void givenZeroFeetAndZeroFeet_WhenEqual_ShouldReturnTrue() {
@@ -17,15 +18,23 @@ public class QuantityMeasurementTest {
     public void givenZeroFeetAndZeroFeet_WhenNullCheck_ShouldReturnResult() {
         QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
         double firstConversion = measurement.getConversion(0.0);
-        boolean result = measurement.equals(null);
+        result = measurement.equals(null);
         Assert.assertEquals(false, result);
     }
 
     @Test
     public void givenZeroFeetAndZeroFeet_WhenCheckReference_ShouldReturnResult() {
-        service.QuantityMeasurement measurement = new service.QuantityMeasurement(service.QuantityMeasurement.Conversion.FEET_TO_INCH);
+        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
         double firstConversion = measurement.getConversion(0.0);
-        boolean result = measurement.equals(measurement);
+        result = measurement.equals(measurement);
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenConversionType_WhenCheckType_ShouldReturnResult() {
+        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
+        QuantityMeasurement measurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
+        result = measurement.equals(measurement1);
         Assert.assertEquals(true, result);
     }
 }
