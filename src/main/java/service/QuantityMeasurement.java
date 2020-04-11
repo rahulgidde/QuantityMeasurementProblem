@@ -8,7 +8,7 @@ public class QuantityMeasurement {
 
     //ENUM FOR CONVERSION
     public enum Conversion {
-        FEET_TO_INCH,INCH_TO_FEET;
+        FEET_TO_INCH,INCH_TO_FEET,FEET_TO_YARD;
     }
 
     //PARAMETRIZED CONSTRUCTOR

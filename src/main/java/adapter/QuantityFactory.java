@@ -8,6 +8,8 @@ public class QuantityFactory {
             return new InchConversion();
         if (type.equals(QuantityMeasurement.Conversion.INCH_TO_FEET))
             return new FeetConversion();
+        if (type.equals(QuantityMeasurement.Conversion.FEET_TO_YARD))
+            return new FeetToYardConversion();
         return null;
     }
 }
