@@ -102,4 +102,12 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurementFeet.getConversion(feet);
         Assert.assertNotEquals(yard, result, 0.0);
     }
+
+    @Test
+    public void given1Inch_WhenCheckConversionNotEqualTo1Yard_ShouldReturnTrue() {
+        double inch = 1.0, yard = 1.0;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_YARD);
+        double result = quantityMeasurementFeet.getConversion(inch);
+        Assert.assertNotEquals(yard, result, 0.0);
+    }
 }
