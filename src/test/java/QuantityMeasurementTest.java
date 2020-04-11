@@ -69,4 +69,12 @@ public class QuantityMeasurementTest {
         result = measurement.equals(measurement);
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenConversionTypes_WhenCheckType_ShouldReturnResult() {
+        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
+        QuantityMeasurement measurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
+        result = measurement.equals(measurement1);
+        Assert.assertEquals(true, result);
+    }
 }
