@@ -25,7 +25,6 @@ public class QuantityMeasurementTest {
     @Test
     public void givenZeroFeetAndZeroFeet_WhenCheckReference_ShouldReturnResult() {
         QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
-        double firstConversion = measurement.getConversion(0.0);
         result = measurement.equals(measurement);
         Assert.assertEquals(true, result);
     }
@@ -58,9 +57,16 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenZeroInchAndZeroInch_WhenCheckNull_ShouldReturnResult() {
-        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
+        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
         double firstConversion = measurement.getConversion(0.0);
         result = measurement.equals(null);
         Assert.assertEquals(false, result);
+    }
+
+    @Test
+    public void givenZeroInch_WhenCheckReference_ShouldReturnResult() {
+        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
+        result = measurement.equals(measurement);
+        Assert.assertEquals(true, result);
     }
 }
