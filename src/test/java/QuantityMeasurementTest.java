@@ -37,4 +37,13 @@ public class QuantityMeasurementTest {
         result = measurement.equals(measurement1);
         Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenFeet_WhenNotEqual_ShouldReturnFalse() {
+        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
+        double firstConversion = measurement.getConversion(0.0);
+        QuantityMeasurement measurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
+        double secondConversion = measurement1.getConversion(0.1);
+        Assert.assertNotEquals(firstConversion, secondConversion, 0.0);
+    }
 }
