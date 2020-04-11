@@ -42,7 +42,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
         double firstConversion = measurement.getConversion(0.0);
         QuantityMeasurement measurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
-        double secondConversion = measurement1.getConversion(0.1);
+        double secondConversion = measurement1.getConversion(1.0);
         Assert.assertNotEquals(firstConversion, secondConversion, 0.0);
     }
 
@@ -76,5 +76,14 @@ public class QuantityMeasurementTest {
         QuantityMeasurement measurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
         result = measurement.equals(measurement1);
         Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenInch_WhenNotEqual_ShouldReturnFalse() {
+        QuantityMeasurement measurement = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
+        double firstConversion = measurement.getConversion(0.0);
+        QuantityMeasurement measurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_FEET);
+        double secondConversion = measurement1.getConversion(1.0);
+        Assert.assertNotEquals(firstConversion, secondConversion, 0.0);
     }
 }
