@@ -88,10 +88,18 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given3Feet_WhenCheckComparisonEqualTo1Yard_ShouldReturnTrue() {
+    public void givenFeet_WhenCheckConversionEqualToYard_ShouldReturnTrue() {
         double feet = 3.0, yard = 1.0;
         QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_YARD);
-        double firstFeet = quantityMeasurementFeet.getConversion(feet);
-        Assert.assertEquals(yard, firstFeet, 0.0);
+        double result = quantityMeasurementFeet.getConversion(feet);
+        Assert.assertEquals(yard, result, 0.0);
+    }
+
+    @Test
+    public void givenFeet_WhenCheckConversionNotEqualToYard_ShouldReturnTrue() {
+        double feet = 2.0, yard = 1.0;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_YARD);
+        double result = quantityMeasurementFeet.getConversion(feet);
+        Assert.assertNotEquals(yard, result, 0.0);
     }
 }
