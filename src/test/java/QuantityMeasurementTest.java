@@ -169,4 +169,15 @@ public class QuantityMeasurementTest {
         double result = firstConversion + secondConversion;
         Assert.assertEquals(expected, result, 0.0);
     }
+
+    @Test
+    public void givenFeetAndInch_WhenCheckAddition_ShouldReturnTrue() {
+        double feet = 1.0, inch = 2.0, expected = 14.0;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
+        double feetConversion = quantityMeasurementFeet.getConversion(feet);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH);
+        double inchConversion = quantityMeasurement.getConversion(inch);
+        double result = feetConversion + inchConversion;
+        Assert.assertEquals(expected, result, 0.0);
+    }
 }

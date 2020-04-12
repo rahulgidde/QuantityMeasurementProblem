@@ -1,14 +1,14 @@
 package service;
 
-import adapter.QuantityAdapter;
-import adapter.QuantityFactory;
+        import adapter.QuantityAdapter;
+        import adapter.QuantityFactory;
 
 public class QuantityMeasurement {
     Conversion type;
 
     //ENUM FOR CONVERSION
     public enum Conversion {
-        FEET_TO_INCH, INCH_TO_FEET, FEET_TO_YARD, INCH_TO_YARD, YARD_TO_INCH,YARD_TO_FEET,INCH_TO_CM,CM_TO_INCH,
+        FEET_TO_INCH, INCH_TO_FEET, FEET_TO_YARD, INCH_TO_YARD, YARD_TO_INCH, YARD_TO_FEET, INCH_TO_CM, CM_TO_INCH,
         INCH;
     }
 
