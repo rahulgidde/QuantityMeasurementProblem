@@ -1,4 +1,3 @@
-
 import org.junit.Assert;
 import org.junit.Test;
 import service.QuantityMeasurement;
@@ -275,5 +274,16 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.GRAM_TO_KG);
         double gramConversion = quantityMeasurement.getConversion(grams);
         Assert.assertEquals(kilogram, gramConversion, 0.0);
+    }
+
+    @Test
+    public void givenTonneAndGram_WhenAdditionOfTonneAndGram_ShouldReturnResultInKg() {
+        double gram = 1000.0, tonne = 1.0, expected = 1001.0;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.TONNE_TO_KG);
+        double tonneConversion = quantityMeasurement.getConversion(tonne);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.GRAM_TO_KG);
+        double gramConversion = quantityMeasurement1.getConversion(gram);
+        double result = tonneConversion + gramConversion;
+        Assert.assertEquals(expected, result, 0.0);
     }
 }
