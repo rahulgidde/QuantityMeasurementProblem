@@ -24,6 +24,8 @@ public class QuantityFactory {
             return new InchAddition();
         if (type.equals(QuantityMeasurement.Conversion.GALLON_TO_LITRES))
             return new GallonToLitre();
+        if (type.equals(QuantityMeasurement.Conversion.LITRES_TO_GALLON))
+            return new LitreToGallon();
         return null;
     }
 }

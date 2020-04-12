@@ -9,7 +9,7 @@ public class QuantityMeasurement {
     //ENUM FOR CONVERSION
     public enum Conversion {
         FEET_TO_INCH, INCH_TO_FEET, FEET_TO_YARD, INCH_TO_YARD, YARD_TO_INCH, YARD_TO_FEET, INCH_TO_CM, CM_TO_INCH,
-        INCH,GALLON_TO_LITRES;
+        INCH, GALLON_TO_LITRES, LITRES_TO_GALLON;
     }
 
     //PARAMETRIZED CONSTRUCTOR
