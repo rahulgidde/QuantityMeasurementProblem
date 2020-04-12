@@ -264,8 +264,16 @@ public class QuantityMeasurementTest {
     @Test
     public void givenTonne_WhenCheckComparisonToKilograms_ShouldReturnResult() {
         double kilogram = 1000.0, tonne = 1.0;
-        QuantityMeasurement quantityMeasurementInTonne = new QuantityMeasurement(QuantityMeasurement.Conversion.TONNE_TO_KG);
-        double kilogramConversion = quantityMeasurementInTonne.getConversion(tonne);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.TONNE_TO_KG);
+        double kilogramConversion = quantityMeasurement.getConversion(tonne);
         Assert.assertEquals(kilogram, kilogramConversion, 0.0);
+    }
+
+    @Test
+    public void givenGrams_WhenCheckComparisonToKilogram_ShouldReturnResult() {
+        double kilogram = 1.0, grams = 1000.0;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.GRAM_TO_KG);
+        double gramConversion = quantityMeasurement.getConversion(grams);
+        Assert.assertEquals(kilogram, gramConversion, 0.0);
     }
 }
