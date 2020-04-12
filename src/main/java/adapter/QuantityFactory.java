@@ -32,6 +32,8 @@ public class QuantityFactory {
             return new MillilitreToLitre();
         if (type.equals(QuantityMeasurement.Conversion.KG_TO_GRAMS))
             return new KilogramsToGrams();
+        if (type.equals(QuantityMeasurement.Conversion.TONNE_TO_KG))
+            return new TonneToGrams();
         return null;
     }
 }
