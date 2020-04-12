@@ -225,4 +225,12 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurementFeet.getConversion(litre);
         Assert.assertEquals(millilitre, result, 0.0);
     }
+
+    @Test
+    public void givenMillilitre_WhenCheckConversionEqualToLitre_ShouldReturnTrue() {
+        double litre = 1.0, millilitre = 1000.0;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.MILLILITER_TO_LITER);
+        double result = quantityMeasurementFeet.getConversion(millilitre);
+        Assert.assertEquals(litre, result, 0.0);
+    }
 }
