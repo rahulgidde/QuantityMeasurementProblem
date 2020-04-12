@@ -1,6 +1,6 @@
 import org.junit.Assert;
-import org.junit.Test;
-import service.QuantityMeasurement;
+        import org.junit.Test;
+        import service.QuantityMeasurement;
 
 public class QuantityMeasurementTest {
     boolean result;
@@ -293,5 +293,13 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FAHRENHEIT_TO_CELSIUS);
         double celsiusConversion = quantityMeasurement.getConversion(fahrenheit);
         Assert.assertEquals(Celsius, celsiusConversion, 0.0);
+    }
+
+    @Test
+    public void givenFahrenheitCelsius_WhenCheckComparisonToFahrenheit_ShouldReturnResult() {
+        double fahrenheit = 212, Celsius = 100;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.CELSIUS_TO_FAHRENHEIT);
+        double fahrenheitConversion = quantityMeasurement.getConversion(Celsius);
+        Assert.assertEquals(fahrenheit, fahrenheitConversion, 0.0);
     }
 }
