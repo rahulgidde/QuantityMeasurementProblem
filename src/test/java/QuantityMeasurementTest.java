@@ -1,4 +1,4 @@
-import adapter.QuantityAdapter;
+
 import org.junit.Assert;
 import org.junit.Test;
 import service.QuantityMeasurement;
@@ -259,5 +259,13 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.KG_TO_GRAMS);
         double gramValue = quantityMeasurement.getConversion(kilogram);
         Assert.assertEquals(grams, gramValue, 0.0);
+    }
+
+    @Test
+    public void givenTonne_WhenCheckComparisonToKilograms_ShouldReturnResult() {
+        double kilogram = 1000.0, tonne = 1.0;
+        QuantityMeasurement quantityMeasurementInTonne = new QuantityMeasurement(QuantityMeasurement.Conversion.TONNE_TO_KG);
+        double kilogramConversion = quantityMeasurementInTonne.getConversion(tonne);
+        Assert.assertEquals(kilogram, kilogramConversion, 0.0);
     }
 }
