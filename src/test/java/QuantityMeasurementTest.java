@@ -242,4 +242,13 @@ public class QuantityMeasurementTest {
         double result = litreConversion + liter;
         Assert.assertEquals(expected, result, 0.0);
     }
+
+    @Test
+    public void givenMilliliterAndLiters_WhenAdditionOfTwoVolumes_ShouldReturnResultInLiters() {
+        double millilitre = 1000.0, litre = 1.0, expected = 2.0;
+        QuantityMeasurement quantityMeasurementLitre = new QuantityMeasurement(QuantityMeasurement.Conversion.MILLILITER_TO_LITER);
+        double litreConversion = quantityMeasurementLitre.getConversion(millilitre);
+        double result = litreConversion + litre;
+        Assert.assertEquals(expected, result, 0.0);
+    }
 }
