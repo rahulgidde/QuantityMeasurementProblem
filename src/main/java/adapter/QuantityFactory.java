@@ -34,6 +34,8 @@ public class QuantityFactory {
             return new KilogramsToGrams();
         if (type.equals(QuantityMeasurement.Conversion.TONNE_TO_KG))
             return new TonneToGrams();
+        if (type.equals(QuantityMeasurement.Conversion.GRAM_TO_KG))
+            return new GramsToKilograms();
         return null;
     }
 }
