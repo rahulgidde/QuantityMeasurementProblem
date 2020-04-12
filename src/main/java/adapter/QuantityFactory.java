@@ -20,6 +20,8 @@ public class QuantityFactory {
             return new InchToCentimeter();
         if (type.equals(QuantityMeasurement.Conversion.CM_TO_INCH))
             return new CentimeterToInch();
+        if (type.equals(QuantityMeasurement.Conversion.INCH))
+            return new InchAddition();
         return null;
     }
 }
