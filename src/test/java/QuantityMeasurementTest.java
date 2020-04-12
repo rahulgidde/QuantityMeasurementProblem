@@ -134,4 +134,12 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurementFeet.getConversion(yard);
         Assert.assertEquals(feet, result, 0.0);
     }
+
+    @Test
+    public void givenInch_WhenCheckConversionEqualToCentimeter_ShouldReturnTrue() {
+        double inch = 2.0, centimeter = 5.08;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_CM);
+        double result = quantityMeasurementFeet.getConversion(inch);
+        Assert.assertEquals(centimeter, result, 0.0);
+    }
 }
