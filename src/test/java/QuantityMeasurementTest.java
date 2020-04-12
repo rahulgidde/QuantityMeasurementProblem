@@ -202,4 +202,12 @@ public class QuantityMeasurementTest {
         double result = firstConversion + secondConversion;
         Assert.assertEquals((int) expected, (int) result, 0.0);
     }
+
+    @Test
+    public void givenGallon_WhenCheckConversionEqualToLitre_ShouldReturnTrue() {
+        double gallon = 1.0, litre = 3.78;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.GALLON_TO_LITRES);
+        double result = quantityMeasurementFeet.getConversion(gallon);
+        Assert.assertEquals(litre, result, 0.0);
+    }
 }
