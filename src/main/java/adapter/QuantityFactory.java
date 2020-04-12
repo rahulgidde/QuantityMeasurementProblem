@@ -16,6 +16,8 @@ public class QuantityFactory {
             return new YardToInchConversion();
         if (type.equals(QuantityMeasurement.Conversion.YARD_TO_FEET))
             return new YardToFeetConversion();
+        if (type.equals(QuantityMeasurement.Conversion.INCH_TO_CM))
+            return new InchToCentimeter();
         return null;
     }
 }
