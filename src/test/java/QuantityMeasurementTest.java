@@ -1,3 +1,4 @@
+import adapter.QuantityAdapter;
 import org.junit.Assert;
 import org.junit.Test;
 import service.QuantityMeasurement;
@@ -250,5 +251,13 @@ public class QuantityMeasurementTest {
         double litreConversion = quantityMeasurementLitre.getConversion(millilitre);
         double result = litreConversion + litre;
         Assert.assertEquals(expected, result, 0.0);
+    }
+
+    @Test
+    public void givenKg_WhenCheckComparisonToGrams_ShouldReturnResult() {
+        double kilogram = 1.0, grams = 1000.0;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.KG_TO_GRAMS);
+        double gramValue = quantityMeasurement.getConversion(kilogram);
+        Assert.assertEquals(grams, gramValue, 0.0);
     }
 }
