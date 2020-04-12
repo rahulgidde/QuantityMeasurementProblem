@@ -5,6 +5,6 @@ public class FahrenheitToCelsius extends QuantityAdapter {
 
     @Override
     public double compare(double fahrenheit) {
-        return fahrenheit - 32 * value;
+        return (fahrenheit - 32) * value;
     }
 }

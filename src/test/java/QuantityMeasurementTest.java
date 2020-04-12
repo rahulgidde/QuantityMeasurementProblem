@@ -286,4 +286,12 @@ public class QuantityMeasurementTest {
         double result = tonneConversion + gramConversion;
         Assert.assertEquals(expected, result, 0.0);
     }
+
+    @Test
+    public void givenFahrenheit_WhenCheckComparisonToCelsius_ShouldReturnResult() {
+        double fahrenheit = 212, Celsius = 100;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FAHRENHEIT_TO_CELSIUS);
+        double celsiusConversion = quantityMeasurement.getConversion(fahrenheit);
+        Assert.assertEquals(Celsius, celsiusConversion, 0.0);
+    }
 }
