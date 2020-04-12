@@ -180,4 +180,15 @@ public class QuantityMeasurementTest {
         double result = feetConversion + inchConversion;
         Assert.assertEquals(expected, result, 0.0);
     }
+
+    @Test
+    public void givenFeetAndFeet_WhenCheckAddition_ShouldReturnTrue() {
+        double firstFeet = 1.0, secondFeet = 1.0, expected = 24.0;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
+        double firstConversion = quantityMeasurementFeet.getConversion(firstFeet);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.FEET_TO_INCH);
+        double secondConversion = quantityMeasurement.getConversion(secondFeet);
+        double result = firstConversion + secondConversion;
+        Assert.assertEquals(expected, result, 0.0);
+    }
 }
