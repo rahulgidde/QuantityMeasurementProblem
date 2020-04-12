@@ -26,6 +26,8 @@ public class QuantityFactory {
             return new GallonToLitre();
         if (type.equals(QuantityMeasurement.Conversion.LITRES_TO_GALLON))
             return new LitreToGallon();
+        if (type.equals(QuantityMeasurement.Conversion.LITER_TO_MILLILITER))
+            return new LiterToMillilitre();
         return null;
     }
 }
