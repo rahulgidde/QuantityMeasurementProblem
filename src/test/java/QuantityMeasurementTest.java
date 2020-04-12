@@ -1,4 +1,3 @@
-import adapter.QuantityAdapter;
 import org.junit.Assert;
 import org.junit.Test;
 import service.QuantityMeasurement;
@@ -217,5 +216,13 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.LITRES_TO_GALLON);
         double result = quantityMeasurementFeet.getConversion(litre);
         Assert.assertEquals(gallon, result, 0.0);
+    }
+
+    @Test
+    public void givenLitre_WhenCheckConversionEqualToMillilitre_ShouldReturnTrue() {
+        double litre = 1.0, millilitre = 1000.0;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.LITER_TO_MILLILITER);
+        double result = quantityMeasurementFeet.getConversion(litre);
+        Assert.assertEquals(millilitre, result, 0.0);
     }
 }
