@@ -191,4 +191,15 @@ public class QuantityMeasurementTest {
         double result = firstConversion + secondConversion;
         Assert.assertEquals(expected, result, 0.0);
     }
+
+    @Test
+    public void givenInchAndCentimeter_WhenCheckAddition_ShouldReturnTrue() {
+        double inch = 2.3, centimeter = 2.5, expected = 3.0;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH);
+        double firstConversion = quantityMeasurement.getConversion(inch);
+        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement(QuantityMeasurement.Conversion.CM_TO_INCH);
+        double secondConversion = quantityMeasurement1.getConversion(centimeter);
+        double result = firstConversion + secondConversion;
+        Assert.assertEquals((int) expected, (int) result, 0.0);
+    }
 }
