@@ -233,4 +233,13 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurementFeet.getConversion(millilitre);
         Assert.assertEquals(litre, result, 0.0);
     }
+
+    @Test
+    public void givenGallonAndLiters_WhenAdditionOfTwoVolumes_ShouldReturnResultInLiters() {
+        double gallon = 1.0, liter = 3.78, expected = 7.56;
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(QuantityMeasurement.Conversion.GALLON_TO_LITRES);
+        double litreConversion = quantityMeasurement.getConversion(gallon);
+        double result = litreConversion + liter;
+        Assert.assertEquals(expected, result, 0.0);
+    }
 }
