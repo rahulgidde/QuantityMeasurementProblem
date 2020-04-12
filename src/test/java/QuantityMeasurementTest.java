@@ -1,3 +1,4 @@
+import adapter.QuantityAdapter;
 import org.junit.Assert;
 import org.junit.Test;
 import service.QuantityMeasurement;
@@ -141,5 +142,13 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_CM);
         double result = quantityMeasurementFeet.getConversion(inch);
         Assert.assertEquals(centimeter, result, 0.0);
+    }
+
+    @Test
+    public void given1Inch_WhenCheckConversionNotEqualToCentimeter_ShouldReturnTrue() {
+        double inch = 1.0, centimeter = 1.0;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH_TO_CM);
+        double result = quantityMeasurementFeet.getConversion(centimeter);
+        Assert.assertNotEquals(centimeter, result, 0.0);
     }
 }
