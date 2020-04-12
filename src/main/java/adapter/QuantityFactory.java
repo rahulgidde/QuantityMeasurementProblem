@@ -38,6 +38,10 @@ public class QuantityFactory {
             return new GramsToKilograms();
         if (type.equals(QuantityMeasurement.Conversion.KG_TO_TONNE))
             return new KilogramsToTonne();
+        if (type.equals(QuantityMeasurement.Conversion.FAHRENHEIT_TO_CELSIUS))
+            return new FahrenheitToCelsius();
+        if (type.equals(QuantityMeasurement.Conversion.CELSIUS_TO_FAHRENHEIT))
+            return new CelsiusToFahrenheit();
         return null;
     }
 }
