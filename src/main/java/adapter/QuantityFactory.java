@@ -28,6 +28,8 @@ public class QuantityFactory {
             return new LitreToGallon();
         if (type.equals(QuantityMeasurement.Conversion.LITER_TO_MILLILITER))
             return new LiterToMillilitre();
+        if (type.equals(QuantityMeasurement.Conversion.MILLILITER_TO_LITER))
+            return new MillilitreToLitre();
         return null;
     }
 }
