@@ -15,7 +15,7 @@ public class QuantityFactory {
         if (type.equals(QuantityMeasurement.Conversion.YARD_TO_INCH))
             return new YardToInchConversion();
         if (type.equals(QuantityMeasurement.Conversion.YARD_TO_FEET))
-            return new YardToFeetConverstion();
+            return new YardToFeetConversion();
         return null;
     }
 }
