@@ -157,6 +157,16 @@ public class QuantityMeasurementTest {
         double inch = 2.0, centimeter = 5.09;
         QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.CM_TO_INCH);
         double result = quantityMeasurementFeet.getConversion(centimeter);
-        Assert.assertNotEquals(inch, result, 0.0);
+        Assert.assertEquals((int) inch, (int) result, 0.0);
+    }
+
+    @Test
+    public void givenInch_WhenCheckAddition_ShouldReturnTrue() {
+        double firstInch = 2.0, secondInch = 2.0, expected = 4.0;
+        QuantityMeasurement quantityMeasurementFeet = new QuantityMeasurement(QuantityMeasurement.Conversion.INCH);
+        double firstConversion = quantityMeasurementFeet.getConversion(firstInch);
+        double secondConversion = quantityMeasurementFeet.getConversion(secondInch);
+        double result = firstConversion + secondConversion;
+        Assert.assertEquals(expected, result, 0.0);
     }
 }
