@@ -4,44 +4,47 @@ import service.QuantityMeasurement;
 
 public class QuantityFactory {
     public static QuantityAdapter getConversionType(QuantityMeasurement.Conversion type) {
-        if (type.equals(QuantityMeasurement.Conversion.FEET_TO_INCH))
-            return new InchConversion();
-        if (type.equals(QuantityMeasurement.Conversion.INCH_TO_FEET))
-            return new FeetConversion();
-        if (type.equals(QuantityMeasurement.Conversion.FEET_TO_YARD))
-            return new FeetToYardConversion();
-        if (type.equals(QuantityMeasurement.Conversion.INCH_TO_YARD))
-            return new InchToYardConversion();
-        if (type.equals(QuantityMeasurement.Conversion.YARD_TO_INCH))
-            return new YardToInchConversion();
-        if (type.equals(QuantityMeasurement.Conversion.YARD_TO_FEET))
-            return new YardToFeetConversion();
-        if (type.equals(QuantityMeasurement.Conversion.INCH_TO_CM))
-            return new InchToCentimeter();
-        if (type.equals(QuantityMeasurement.Conversion.CM_TO_INCH))
-            return new CentimeterToInch();
-        if (type.equals(QuantityMeasurement.Conversion.INCH))
-            return new InchAddition();
-        if (type.equals(QuantityMeasurement.Conversion.GALLON_TO_LITRES))
-            return new GallonToLitre();
-        if (type.equals(QuantityMeasurement.Conversion.LITRES_TO_GALLON))
-            return new LitreToGallon();
-        if (type.equals(QuantityMeasurement.Conversion.LITER_TO_MILLILITER))
-            return new LiterToMillilitre();
-        if (type.equals(QuantityMeasurement.Conversion.MILLILITER_TO_LITER))
-            return new MillilitreToLitre();
-        if (type.equals(QuantityMeasurement.Conversion.KG_TO_GRAMS))
-            return new KilogramsToGrams();
-        if (type.equals(QuantityMeasurement.Conversion.TONNE_TO_KG))
-            return new TonneToGrams();
-        if (type.equals(QuantityMeasurement.Conversion.GRAM_TO_KG))
-            return new GramsToKilograms();
-        if (type.equals(QuantityMeasurement.Conversion.KG_TO_TONNE))
-            return new KilogramsToTonne();
-        if (type.equals(QuantityMeasurement.Conversion.FAHRENHEIT_TO_CELSIUS))
-            return new FahrenheitToCelsius();
-        if (type.equals(QuantityMeasurement.Conversion.CELSIUS_TO_FAHRENHEIT))
-            return new CelsiusToFahrenheit();
-        return null;
+        switch (type) {
+            case FEET_TO_INCH:
+                return new InchConversion();
+            case INCH_TO_FEET:
+                return new FeetConversion();
+            case FEET_TO_YARD:
+                return new FeetToYardConversion();
+            case INCH_TO_YARD:
+                return new InchToYardConversion();
+            case YARD_TO_INCH:
+                return new YardToInchConversion();
+            case YARD_TO_FEET:
+                return new YardToFeetConversion();
+            case INCH_TO_CM:
+                return new InchToCentimeter();
+            case CM_TO_INCH:
+                return new CentimeterToInch();
+            case INCH:
+                return new InchAddition();
+            case GALLON_TO_LITRES:
+                return new GallonToLitre();
+            case LITRES_TO_GALLON:
+                return new LitreToGallon();
+            case LITER_TO_MILLILITER:
+                return new LiterToMillilitre();
+            case MILLILITER_TO_LITER:
+                return new MillilitreToLitre();
+            case KG_TO_GRAMS:
+                return new KilogramsToGrams();
+            case TONNE_TO_KG:
+                return new TonneToGrams();
+            case GRAM_TO_KG:
+                return new GramsToKilograms();
+            case KG_TO_TONNE:
+                return new KilogramsToTonne();
+            case FAHRENHEIT_TO_CELSIUS:
+                return new FahrenheitToCelsius();
+            case CELSIUS_TO_FAHRENHEIT:
+                return new CelsiusToFahrenheit();
+            default:
+                return null;
+        }
     }
 }
