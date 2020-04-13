@@ -1,6 +1,6 @@
 import org.junit.Assert;
-        import org.junit.Test;
-        import service.QuantityMeasurement;
+import org.junit.Test;
+import service.QuantityMeasurement;
 
 public class QuantityMeasurementTest {
     boolean result;
